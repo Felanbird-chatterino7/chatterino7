@@ -349,8 +349,8 @@ void EmotePopup::loadChannel(ChannelPtr channel)
         *globalChannel, *subChannel, this->channel_->getName());
 
     // global
-    addEmotes(*channelChannel, *this->twitchChannel_->seventvEmotes(), "7TV",
-          MessageElementFlag::SeventvEmote);
+    addEmotes(*globalChannel, *getApp()->twitch->getSeventvEmotes().emotes(),
+              "7TV", MessageElementFlag::SeventvEmote);
 
     if (Settings::instance().enableBTTVGlobalEmotes)
     {
@@ -365,7 +365,7 @@ void EmotePopup::loadChannel(ChannelPtr channel)
 
     // channel
     addEmotes(*channelChannel, *this->twitchChannel_->seventvEmotes(), "7TV",
-          MessageElementFlag::SeventvEmote);
+              MessageElementFlag::SeventvEmote);
 
     if (Settings::instance().enableBTTVChannelEmotes)
     {
